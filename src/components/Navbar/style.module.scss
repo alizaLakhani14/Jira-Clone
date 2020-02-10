@@ -1,0 +1,121 @@
+@import "../../mixins.scss";
+
+.air__menuLeft {
+  @media (max-width: 999px) {
+    display: none;
+  }
+  &__outer {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 64px;
+    height: 100%;
+    width: 230px;
+    background-color: $light-gray;
+    border-right: 1px solid rgb(223, 225, 230);
+    padding: 0px 16px 24px;
+    @media (max-width: 999px) {
+      display: none;
+    }
+    &__hr {
+      background-color: rgb(193, 199, 208);
+    }
+    &__header {
+      display: flex;
+      padding: 24px 4px;
+
+      img {
+        height: 45px;
+        width: 47px;
+      }
+      h4 {
+        margin: 0;
+        color: rgb(66, 82, 110);
+        font-size: 13px;
+        text-transform: lowercase;
+        font-weight: bold;
+      }
+      p {
+        margin: 0;
+        color: rgb(94, 108, 132);
+        font-size: 13px;
+      }
+      &__section {
+        margin-top: 4px;
+        margin-left: 4px;
+      }
+    }
+    &__firstList {
+      list-style: none;
+      padding: 0;
+      margin-right: auto;
+      margin-left: auto;
+      a:hover {
+        text-decoration: none !important;
+      }
+      &__activeItem {
+        :hover {
+          text-decoration: none !important;
+        }
+        > li {
+          color: rgb(0, 82, 204);
+          background: rgb(235, 236, 240);
+        }
+      }
+
+      &__listItem {
+        color: black;
+        font-size: 14.7px;
+        padding: 8px 12px;
+        border-radius: 3px;
+        cursor: pointer;
+        background-color: transparent;
+        font-weight: 400 !important;
+        user-select: none;
+        display: flex;
+        > i {
+          font-size: 20px;
+          margin-top: 1px;
+        }
+        &__span {
+          margin-left: 15px;
+          // font-weight: bold;
+        }
+      }
+    }
+    &__secondList {
+      list-style: none;
+      padding: 0;
+      margin-top: 1em;
+      &__listItem {
+        position: relative;
+        display: flex;
+        user-select: none;
+        cursor: not-allowed;
+        padding: 8px 12px;
+        border-radius: 3px;
+
+        i {
+          margin-right: 15px;
+          font-size: 20px;
+          margin-top: 3px;
+        }
+        &__span {
+          padding-top: 2px;
+          font-size: 14.7px;
+          font-weight: 600;
+          &__div {
+            width: 140px;
+            text-transform: uppercase;
+            color: rgb(66, 82, 110);
+            font-size: 11.5px;
+            font-weight: bold;
+            padding: 5px 0px 5px 8px;
+            border-radius: 3px;
+            background: rgb(223, 225, 230);
+          }
+        }
+      }
+    }
+  }
+}

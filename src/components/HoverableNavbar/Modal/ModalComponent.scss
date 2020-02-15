@@ -1,0 +1,123 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 40px 35px !important;
+  h1 {
+    padding-bottom: 15px;
+    font-size: 21px;
+    color: rgb(23, 43, 77);
+  }
+}
+
+.label {
+  display: block;
+  color: rgb(94, 108, 132);
+  font-weight: normal;
+  font-size: 13px;
+  margin: 0 !important;
+  font-weight: bold;
+}
+
+.summary-p,
+.issue-p,
+.priority-p {
+  padding-top: 6px;
+  color: rgb(94, 108, 132);
+  font-size: 12.5px;
+  font-weight: bold;
+  margin-bottom: 0 !important;
+}
+
+.error input {
+  border: 1px solid red;
+}
+
+.error-message-modal {
+  color: red !important;
+  font-size: 13px !important;
+  font-weight: bold;
+}
+
+.icon {
+  margin-right: 5px;
+  font-size: 15px !important;
+}
+
+.check {
+  color: rgb(79, 173, 230);
+}
+
+.bookmark {
+  color: rgb(101, 186, 67);
+}
+
+.exclamation {
+  color: red;
+}
+.medium {
+  color: rgb(233, 127, 51);
+}
+.highest {
+  color: rgb(205, 19, 23);
+}
+
+.high {
+  color: rgb(233, 73, 74);
+}
+
+.low {
+  color: rgb(45, 135, 56);
+}
+
+.lowest {
+  color: rgb(87, 165, 90);
+}
+
+.modal-img {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+
+.modal-buttons-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.modal-buttons-div > * {
+  margin: 5px;
+}
+
+.modal-form-submit {
+  background: rgb(0, 82, 204) !important;
+  outline: none !important;
+  border-radius: 3px !important;
+  padding: 0px 12px !important;
+  font-size: 14.5px !important;
+  color: rgb(255, 255, 255) !important;
+  font-weight: normal !important;
+  border: none !important;
+}
+
+.modal-cancel {
+  background-color: transparent !important;
+  color: rgb(66, 82, 110) !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 3px !important;
+}
+
+.modal-cancel:hover {
+  background-color: rgb(235, 236, 240) !important;
+}
+
+.modal-cancel:active {
+  color: rgb(0, 82, 204) !important;
+  background: rgb(210, 229, 254) !important;
+  border: none !important;
+  box-shadow: 0 0 0 0 !important;
+}

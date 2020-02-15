@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./HoverableNavbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,9 +7,16 @@ import {
   faQuestionCircle
 } from "@fortawesome/free-solid-svg-icons";
 import Jira from "./../../images/jira-logo.PNG";
+import ModalComponent from "./Modal/ModalComponent";
 
 const HoverableNavbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [modal, setModal] = React.useState(false);
+
+  const toggle = () => {
+    setModal(!modal);
+    setIsOpen(false);
+  };
 
   const onMouseEnterHandler = () => {
     setIsOpen(true);
@@ -22,8 +29,8 @@ const HoverableNavbar = () => {
     <div
       className={`hoverable-navbar ${isOpen === true &&
         "hoverable-navbar-open"}`}
-      onMouseEnter={onMouseEnterHandler}
-      onMouseLeave={onMouseLeaveHandler}
+      onMouseEnter={!modal && onMouseEnterHandler}
+      onMouseLeave={!modal && onMouseLeaveHandler}
     >
       <img src={Jira} alt="logo" className="navbar-img" />
       <ul className="navbar-list">
@@ -36,7 +43,7 @@ const HoverableNavbar = () => {
             Search Issues
           </span>
         </li>
-        <li className="navbar-list-item">
+        <li className="navbar-list-item" onClick={toggle}>
           <i className="fe fe-plus navbar-icon" />
           <span
             className={`list-item-span ${isOpen === true &&
@@ -55,6 +62,7 @@ const HoverableNavbar = () => {
           </span>
         </li>
       </ul>
+      <ModalComponent toggle={toggle} isOpen={modal}></ModalComponent>
     </div>
   );
 };

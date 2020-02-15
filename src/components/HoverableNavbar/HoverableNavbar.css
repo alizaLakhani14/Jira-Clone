@@ -6,7 +6,7 @@
   left: 0;
   background-color: rgb(7, 71, 166);
   z-index: 100;
-  /* transition: all 0.1s ease 0s; */
+  transition: all 0.1s ease 0s;
 }
 
 .hoverable-navbar-open {

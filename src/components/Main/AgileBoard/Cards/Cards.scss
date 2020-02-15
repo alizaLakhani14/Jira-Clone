@@ -9,6 +9,7 @@
     min-height: 400px;
     width: 25%;
     margin-right: 10px;
+    margin-top: 0;
     border-radius: 3px;
     background: rgb(244, 245, 247);
     padding: 0 !important;
@@ -17,6 +18,7 @@
       color: rgb(94, 108, 132);
       font-size: 12.5px;
       padding: 13px 10px 17px;
+      margin-bottom: 0 !important;
     }
     &__body {
       height: 100%;
@@ -50,10 +52,19 @@
             &--bookmark {
               color: rgb(101, 186, 67);
             }
-            &--arrowUp {
+            &--high {
+              color: rgb(233, 73, 74);
+            }
+            &--highest{
+              color: rgb(205, 19, 23);
+            }
+            &--medium{
               color: rgb(233, 127, 51);
             }
-            &--arrowDown {
+            &--low{
+              color: rgb(45, 135, 56);
+            }
+            &--lowest {
               color: rgb(87, 165, 90);
             }
             &--check {

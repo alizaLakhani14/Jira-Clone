@@ -1,10 +1,10 @@
 import React from "react";
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { Layout } from "antd";
 import style from "./style.module.scss";
 import Image from "./../../images/img.PNG";
-
+import uuid from "uuid";
 
 const { Sider } = Layout;
 
@@ -16,13 +16,13 @@ class MenuLeft extends React.Component {
         name: "Kanban board",
         icon: "fe fe-credit-card",
         navlink: "/",
-        id: "kanban board"
+        id: uuid()
       },
       {
         name: "Project settings",
         icon: "fe fe-settings",
         navlink: "/projectSettings",
-        id: "Project Settings"
+        id: uuid()
       }
     ],
     secondItems: [
@@ -86,6 +86,8 @@ class MenuLeft extends React.Component {
           <ul className={style.air__menuLeft__outer__firstList}>
             {this.state.items.map(item => (
               <NavLink
+                key={item.id}
+                exact
                 to={item.navlink}
                 activeClassName={
                   style.air__menuLeft__outer__firstList__activeItem

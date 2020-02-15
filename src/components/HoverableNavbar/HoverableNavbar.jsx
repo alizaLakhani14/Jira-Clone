@@ -1,11 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./HoverableNavbar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faPlus,
-  faQuestionCircle
-} from "@fortawesome/free-solid-svg-icons";
 import Jira from "./../../images/jira-logo.PNG";
 import ModalComponent from "./Modal/ModalComponent";
 

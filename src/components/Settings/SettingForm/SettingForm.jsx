@@ -1,7 +1,7 @@
 import React from "react";
 import "./SettingForm.scss";
-import { Breadcrumb, BreadcrumbItem, Label, Input, Button } from "reactstrap";
-import { formik, Formik, Form, Field, ErrorMessage } from "formik";
+import { Breadcrumb, BreadcrumbItem, Label, Button } from "reactstrap";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Quill from "./Quill";
 import Select from "./Select";

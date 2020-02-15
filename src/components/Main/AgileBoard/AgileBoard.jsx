@@ -3,6 +3,7 @@ import "./AgileBoard.scss";
 import { Container, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Icon } from "antd";
 import Cards from "./Cards/Cards";
+import SearchSection from "./SearchSection/SearchSection";
 
 const AgileBoard = () => {
   return (
@@ -25,10 +26,7 @@ const AgileBoard = () => {
         </button>
       </div>
       <div className="agileBoard__container__searchSection">
-        <div className="agileBoard__container__searchSection__searchbar">
-          <i className="fe fe-search agileBoard__container__searchSection__searchbar__icon" />
-          <input></input>
-        </div>
+        <SearchSection />
         <div className="agileBoard__container__searchSection__profiles">
           <div className="agileBoard__container__searchSection__profiles__profile">
             <div className="agileBoard__container__searchSection__profiles__profile__img1"></div>

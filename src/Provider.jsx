@@ -77,20 +77,23 @@ const cardsList = [
     assignees: ["Pickle Rick"],
     priority: "high",
     id: uuid()
-  },
-  
+  }
 ];
 
 export const Provider = props => {
   const [cards, setCards] = React.useState(cardsList);
 
-  const addCard = (values) => {
-    setCards([...cards, {...values, id: uuid()}])
-  }
+  const addCard = values => {
+    setCards([...cards, { ...values, id: uuid() }]);
+  };
 
+  const filterCards = value => {
+    let fileterdCards = cards.filter(item => item.summary.includes(value));
+    setCards(fileterdCards);
+  };
 
   return (
-    <Context.Provider value={{cards, addCard}}>
+    <Context.Provider value={{ cards, addCard, filterCards }}>
       {props.children}
     </Context.Provider>
   );

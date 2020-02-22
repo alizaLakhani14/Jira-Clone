@@ -12,19 +12,31 @@ import {
 import uuid from "uuid";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { Context } from "./../../../../Provider";
+import DescriptionModal from "./DescriptionModal/DescriptionModal";
+import TaskDescription from "./../Cards/TaskDescription/TaskDescription";
 
 const Cards = () => {
-  const { cards } = React.useContext(Context);
+  const {
+    cards,
+    filteredCards,
+    extractValues,
+    selectedCard,
+    toggle1
+  } = React.useContext(Context);
   const [columns, setColumns] = React.useState({});
+  // const [isOpen, setIsOpen] = React.useState(false);
+  // // const toggle = () => {
+  //   setIsOpen(!isOpen);
+  // };
   useEffect(() => {
     const columnData = {
-      [uuid()]: { name: "BackLog", items: cards },
+      [uuid()]: { name: "BackLog", items: filteredCards },
       [uuid()]: { name: "Selected for development", items: [] },
       [uuid()]: { name: "In progress", items: [] },
       [uuid()]: { name: "Done", items: [] }
     };
     setColumns(columnData);
-  }, [cards]);
+  }, [filteredCards]);
 
   const onDragEnd = (result, columns, setColumns) => {
     if (!result.destination) return;
@@ -64,7 +76,6 @@ const Cards = () => {
 
   return (
     <Row className="agileBoardCardsContainer">
-      {/* <h1>{value}</h1> */}
       <DragDropContext
         onDragEnd={result => onDragEnd(result, columns, setColumns)}
       >
@@ -98,6 +109,10 @@ const Cards = () => {
                                   {...provided.dragHandleProps}
                                   style={{
                                     ...provided.draggableProps.style
+                                  }}
+                                  onClick={() => {
+                                    extractValues(item.id);
+                                    toggle1();
                                   }}
                                 >
                                   <p>{item.summary}</p>
@@ -197,6 +212,9 @@ const Cards = () => {
           );
         })}
       </DragDropContext>
+      {selectedCard.length && (
+        <TaskDescription  />
+      )}
     </Row>
   );
 };

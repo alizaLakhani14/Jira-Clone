@@ -1,0 +1,35 @@
+.delete-modal {
+  padding: 35px 40px 40px !important;
+  h1 {
+    color: rgb(23, 43, 77) !important;
+    font-size: 22px !important;
+    padding-bottom: 25px !important;
+  }
+  p {
+    padding-bottom: 25px;
+    font-size: 15px;
+    color: rgb(23, 43, 77);
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  &__buttons > * {
+    margin-right: 5px;
+  }
+}
+
+.delete-cancel-button {
+  background-color: transparent !important;
+  color: rgb(66, 82, 110) !important;
+  border: none !important;
+  &:hover {
+    background: rgb(235, 236, 240) !important;
+  }
+  &:active {
+    color: rgb(0, 82, 204) !important;
+    background: rgb(210, 229, 254) !important;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0 !important;
+  }
+}

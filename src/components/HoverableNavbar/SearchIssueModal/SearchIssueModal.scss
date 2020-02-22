@@ -1,0 +1,110 @@
+.search-issue-modal {
+  margin: 0 !important;
+}
+
+.search-issue-modal .modal-content {
+  min-height: 100vh !important;
+  height: 100vh !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.search-issue-cancel-div {
+  height: 50px;
+  width: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 470px;
+  background-color: white;
+}
+
+.times-icon {
+  font-size: 20px;
+  color: rgb(94, 108, 132) !important;
+  cursor: pointer;
+  &:hover {
+    color: rgb(0, 82, 204) !important ;
+  }
+  &:active {
+    color: rgb(0, 82, 204) !important;
+  }
+}
+.search-issue-modal-body {
+  position: relative;
+}
+.search-issues-div {
+  height: 30px;
+  width: 389px;
+  margin-top: 1em;
+  margin-left: 0.5em;
+  border-bottom: 2px solid rgb(0, 82, 204);
+  padding-bottom: 35px;
+  border-radius: 3px;
+}
+
+.search-issues-div input {
+  border: none !important;
+  width: 366px;
+  padding: 5px;
+  outline: none !important;
+  color: rgb(23, 43, 77);
+  font-size: 16px;
+  padding-left: 10px;
+  &:focus {
+    border: none !important;
+    box-shadow: 0 0 0 0 !important;
+    outline: none !important;
+  }
+  &:active {
+    border: none !important;
+    box-shadow: 0 0 0 0 !important;
+    outline: none !important;
+  }
+}
+
+.search-issues-search-icon {
+  color: rgb(94, 108, 132) !important;
+  font-size: 20px;
+}
+
+.search-option {
+  display: flex;
+  padding: 4px 10px;
+  width: 400px;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover {
+    background: rgb(235, 236, 240);
+  }
+  p {
+    color: rgb(66, 82, 110);
+    font-size: 15px;
+  }
+}
+
+.search-issue-icon {
+  margin-top: 4px;
+  margin-right: 5px;
+}
+
+.check {
+  color: #4fade6 !important;
+}
+
+.bookmark {
+  color: #65ba43 !important;
+}
+
+.exclamation {
+  color: red !important;
+}
+.search-result-label {
+  margin-top: 1.5em;
+  color: rgb(66, 82, 110);
+  font-size: 15px;
+  margin-left: 2em;
+  font-weight: bold;
+}

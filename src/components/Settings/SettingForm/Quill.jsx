@@ -11,7 +11,13 @@ const Quill = ({ defaultValue, setFieldValue }) => {
     setFieldValue("description", text);
   };
 
-  return <ReactQuill value={text} onChange={handleChange} />;
+  return (
+    <ReactQuill
+      value={text}
+      onChange={handleChange}
+      className="setting-form-quill"
+    />
+  );
 };
 
 export default Quill;

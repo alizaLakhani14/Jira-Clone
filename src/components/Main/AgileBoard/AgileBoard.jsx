@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import "./AgileBoard.scss";
 import { Container, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Icon } from "antd";
@@ -42,7 +42,7 @@ const AgileBoard = () => {
         <button>Only My Issues</button>
         <button>Recently Updated</button>
       </div>
-      <Cards />
+      <Cards  />
     </Container>
   );
 };

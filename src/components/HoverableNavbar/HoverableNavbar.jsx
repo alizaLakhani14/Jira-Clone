@@ -2,10 +2,16 @@ import React from "react";
 import "./HoverableNavbar.css";
 import Jira from "./../../images/jira-logo.PNG";
 import ModalComponent from "./Modal/ModalComponent";
+import SearchIssueModal from "./SearchIssueModal/SearchIssueModal";
 
 const HoverableNavbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [modal, setModal] = React.useState(false);
+  const [modal2, setModal2] = React.useState(false);
+
+  const toggle2 = () => {
+    setModal2(!modal2);
+  };
 
   const toggle = () => {
     setModal(!modal);
@@ -28,7 +34,7 @@ const HoverableNavbar = () => {
     >
       <img src={Jira} alt="logo" className="navbar-img" />
       <ul className="navbar-list">
-        <li className="navbar-list-item">
+        <li className="navbar-list-item" onClick={toggle2}>
           <i className="fe fe-search navbar-icon" />
           <span
             className={`list-item-span ${isOpen === true &&
@@ -57,6 +63,7 @@ const HoverableNavbar = () => {
         </li>
       </ul>
       <ModalComponent toggle={toggle} isOpen={modal}></ModalComponent>
+      <SearchIssueModal toggle={toggle2} isOpen={modal2} />
     </div>
   );
 };

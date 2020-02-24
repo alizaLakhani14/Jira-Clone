@@ -14,6 +14,7 @@ const Main = () => {
       <AgileBoard />
     </div>
   );
+
 };
 
 export default Main;

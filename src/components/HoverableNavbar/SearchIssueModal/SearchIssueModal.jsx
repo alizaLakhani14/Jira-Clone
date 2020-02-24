@@ -13,7 +13,6 @@ import { Context } from "./../../../Provider";
 
 const SearchIssueModal = ({ isOpen, toggle }) => {
   const {
-    filteredCards,
     searchInputValue,
     handleSearchInputChange,
     filteredOptions,

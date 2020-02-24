@@ -12,22 +12,18 @@ import {
 import uuid from "uuid";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { Context } from "./../../../../Provider";
-import DescriptionModal from "./DescriptionModal/DescriptionModal";
+
 import TaskDescription from "./../Cards/TaskDescription/TaskDescription";
 
 const Cards = () => {
   const {
-    cards,
     filteredCards,
     extractValues,
     selectedCard,
     toggle1
   } = React.useContext(Context);
   const [columns, setColumns] = React.useState({});
-  // const [isOpen, setIsOpen] = React.useState(false);
-  // // const toggle = () => {
-  //   setIsOpen(!isOpen);
-  // };
+
   useEffect(() => {
     const columnData = {
       [uuid()]: { name: "BackLog", items: filteredCards },
@@ -212,9 +208,7 @@ const Cards = () => {
           );
         })}
       </DragDropContext>
-      {selectedCard.length && (
-        <TaskDescription  />
-      )}
+      {selectedCard.length > 0 ? <TaskDescription /> : null}
     </Row>
   );
 };

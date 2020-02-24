@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import React from "react";
 import { Modal, ModalBody, Row, Col, Input, Button, Label } from "reactstrap";
-import { Formik, Form, Field, useField } from "formik";
+import { Formik, Form, useField } from "formik";
 import "./TaskDescription.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,7 +11,6 @@ import {
   faCheckSquare,
   faExclamationCircle,
   faTrashAlt,
-  faCross,
   faTimes,
   faLink,
   faPaperPlane,
@@ -19,19 +18,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ReactSelect from "react-select";
 import { Context } from "./../../../../../Provider";
-import TextArea from "antd/lib/input/TextArea";
+
 import ReactQuill from "react-quill";
 import DeleteModal from "./DeleteModal/DeleteModal";
 
 const TaskDescription = () => {
-  const {
-    selectedCard,
-    makeEdit,
-    fetchedObject,
-    update,
-    open,
-    toggle1
-  } = React.useContext(Context);
+  const { selectedCard, update, open, toggle1 } = React.useContext(Context);
   const [isEditable, setIsEditable] = React.useState(false);
   const [commentsAvailable, setCommentsAvailable] = React.useState(false);
   const [changeDescription, setChangeDescription] = React.useState(false);
@@ -202,16 +194,23 @@ const TaskDescription = () => {
             id: selectedCard[0].id
           }}
           onSubmit={(values, { setSubmitting }) => {
-            // makeEdit(values);
+            setSubmitting(true);
             update(values);
             toggle1();
           }}
         >
-          {({ values, handleChange, handleSubmit, setFieldValue }) => {
+          {({
+            values,
+            handleChange,
+            handleSubmit,
+            setFieldValue,
+            isSubmitting
+          }) => {
             return (
               <Form onSubmit={handleSubmit}>
                 <Row>
-                  <Col lg="7" md="7" sm="7" xs="7">
+                  <Col>
+                    {" "}
                     <div className="header-select">
                       <ReactSelect
                         isSearchable={false}
@@ -224,6 +223,34 @@ const TaskDescription = () => {
                         }
                       />
                     </div>
+                  </Col>
+                  <Col>
+                    <div className="col-2-buttons">
+                      <Button>
+                        <FontAwesomeIcon
+                          icon={faPaperPlane}
+                          style={{ marginRight: "3px" }}
+                        />
+                        Give feedback
+                      </Button>
+                      <Button>
+                        <FontAwesomeIcon
+                          icon={faLink}
+                          style={{ marginRight: "3px" }}
+                        />
+                        Copy link
+                      </Button>
+                      <Button onClick={toggleIsOpen}>
+                        <FontAwesomeIcon icon={faTrashAlt} />
+                      </Button>
+                      <Button onClick={toggle1}>
+                        <FontAwesomeIcon icon={faTimes} />
+                      </Button>
+                    </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col lg="7" md="12" sm="12" xs="12">
                     <div style={{ marginTop: "1em" }}>
                       <TextArea
                         name="summary"
@@ -385,33 +412,12 @@ const TaskDescription = () => {
                   </Col>
                   <Col
                     lg="5"
-                    md="5"
-                    sm="5"
-                    xs="5"
-                    style={{ paddingLeft: "70px" }}
+                    md="12"
+                    sm="12"
+                    xs="12"
+                    // style={{ paddingLeft: "70px" }}
+                    className='col-2'
                   >
-                    <div className="col-2-buttons">
-                      <Button>
-                        <FontAwesomeIcon
-                          icon={faPaperPlane}
-                          style={{ marginRight: "3px" }}
-                        />
-                        Give feedback
-                      </Button>
-                      <Button>
-                        <FontAwesomeIcon
-                          icon={faLink}
-                          style={{ marginRight: "3px" }}
-                        />
-                        Copy link
-                      </Button>
-                      <Button onClick={toggleIsOpen}>
-                        <FontAwesomeIcon icon={faTrashAlt} />
-                      </Button>
-                      <Button onClick={toggle1}>
-                        <FontAwesomeIcon icon={faTimes} />
-                      </Button>
-                    </div>
                     <div
                       style={{ marginTop: "16px" }}
                       className="task-status-div"
@@ -491,7 +497,12 @@ const TaskDescription = () => {
                     <div className="created">Updated at 10 days ago</div>
                   </Col>
                 </Row>
-                <Button type="submit" onClick={handleSubmit}>
+                <Button
+                  type="submit"
+                  onClick={handleSubmit}
+                  className="submit-btn"
+                  disable={isSubmitting}
+                >
                   Save Changes
                 </Button>
               </Form>

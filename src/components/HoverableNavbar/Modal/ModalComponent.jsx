@@ -235,12 +235,6 @@ const ModalComponent = ({ toggle, isOpen }) => {
                       }
                     ]}
                     isMulti
-                    onChange={value => {
-                      setFieldValue(
-                        "assignees",
-                        value && value.map(item => item.value)
-                      );
-                    }}
                   ></ReactSelect>
                 </div>
                 <div className="form-field">
